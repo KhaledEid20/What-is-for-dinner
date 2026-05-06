@@ -1,6 +1,6 @@
 export const data = [
     {
-        food_image:"../Images/shrimp.jpg",
+        food_image:"https://github.com/KhaledEid20/What-is-for-dinner/blob/master/Images/shrimp.jpg",
         recipe_name: "Shrimp Scampi",
         recipe_desc: "Garlicky shrimp in white wine butter sauce",
         tags: ["Easy" , "Seafood"],
@@ -29,7 +29,7 @@ export const data = [
     },
 
     {
-        food_image:"../Images/chicken.jpg",
+        food_image:"https://github.com/KhaledEid20/What-is-for-dinner/blob/master/Images/chicken.jpg",
         recipe_name:"Grilled Chicken",
         recipe_desc:"Juicy grilled chicken breast with herbs",
         tags:["Healthy","Protein"],
@@ -48,7 +48,7 @@ export const data = [
     },
 
     {
-        food_image:"../Images/pasta.jpg",
+        food_image:"https://github.com/KhaledEid20/What-is-for-dinner/blob/master/Images/pasta.jpg",
         recipe_name:"Creamy Alfredo Pasta",
         recipe_desc:"Rich creamy pasta with parmesan",
         tags:["Italian","Comfort"],
@@ -67,7 +67,7 @@ export const data = [
     },
 
     {
-        food_image:"../Images/burger.jpg",
+        food_image:"https://github.com/KhaledEid20/What-is-for-dinner/blob/master/Images/burger.jpg",
         recipe_name:"Beef Burger",
         recipe_desc:"Classic juicy beef burger",
         tags:["Fast Food"],
@@ -85,7 +85,7 @@ export const data = [
     },
 
     {
-        food_image:"../Images/salad.jpeg",
+        food_image:"https://github.com/KhaledEid20/What-is-for-dinner/blob/master/Images/salad.jpeg",
         recipe_name:"Caesar Salad",
         recipe_desc:"Fresh salad with creamy dressing",
         tags:["Healthy","Vegetarian"],
@@ -103,7 +103,7 @@ export const data = [
     },
 
     {
-        food_image:"../Images/pizza.jpg",
+        food_image:"https://github.com/KhaledEid20/What-is-for-dinner/blob/master/Images/pizza.jpg",
         recipe_name:"Margherita Pizza",
         recipe_desc:"Classic tomato mozzarella pizza",
         tags:["Italian"],
@@ -121,7 +121,7 @@ export const data = [
     },
 
     {
-        food_image:"../Images/soup.jpeg",
+        food_image:"https://github.com/KhaledEid20/What-is-for-dinner/blob/master/Images/soup.jpeg",
         recipe_name:"Tomato Soup",
         recipe_desc:"Warm creamy tomato soup",
         tags:["Comfort"],
@@ -139,7 +139,7 @@ export const data = [
     },
 
     {
-        food_image:"../Images/steak.jpg",
+        food_image:"https://github.com/KhaledEid20/What-is-for-dinner/blob/master/Images/steak.jpg",
         recipe_name:"Grilled Steak",
         recipe_desc:"Perfectly grilled steak",
         tags:["Protein"],
@@ -157,7 +157,7 @@ export const data = [
     },
 
     {
-        food_image:"../Images/tacos.jpeg",
+        food_image:"https://github.com/KhaledEid20/What-is-for-dinner/blob/master/Images/tacos.jpeg",
         recipe_name:"Chicken Tacos",
         recipe_desc:"Spicy chicken tacos",
         tags:["Mexican"],
@@ -175,7 +175,7 @@ export const data = [
     },
 
     {
-        food_image:"../Images/pancakes.jfif",
+        food_image:"https://github.com/KhaledEid20/What-is-for-dinner/blob/master/Images/pancakes.jfif",
         recipe_name:"Pancakes",
         recipe_desc:"Fluffy breakfast pancakes",
         tags:["Breakfast"],
