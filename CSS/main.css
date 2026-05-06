@@ -1,0 +1,228 @@
+:root{
+    --main-color :#F54900;
+    --sec-color : #fb742b;
+    --gradient-color : linear-gradient(to right, #fb742b , #F54900);
+    --text-color:#101828;
+    --text-sec-color : #364153;
+    --main-transition : 0.3s;
+    --bg-color:#ffedd4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color: var(--text-color);
+}
+
+
+nav{
+    background-color: white;
+}
+nav .icon{
+    background: var(--gradient-color);
+}
+
+nav .icon p{
+    font-weight: 400;
+    font-size: 14px;
+    color: #6a7282;
+}
+
+nav .image-holder{
+    width: 40px;
+    padding: 1px;
+    border: 1px solid var(--main-color);
+    border-radius: 50%;
+}
+nav .image-holder img{
+    width: 100%;
+    border-radius: 50%;
+
+}
+nav ul li a{
+    color: inherit;
+    text-decoration: none;
+    transition: var(--main-transition);
+    
+}
+nav ul li a:hover{
+    color: var(--main-color);
+    transition: var(--main-transition);
+}
+/* ---------------------------------header section---------------------------------------- */
+header{
+    background-color: #fefce8;
+}
+
+header .card{
+    margin-top: 100px;
+    max-width: 1230px;
+    max-height: 800px;
+}
+
+header .left {
+    position: relative;
+}
+header .left .further-info{
+    position: absolute;
+    bottom: 40px;
+    color: white;
+    left: 50%;
+    background-color: white;
+    transform: translateX(-50%);
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+}
+header .left .further-info i{
+    font-size: 30px;
+}
+header .left .further-info span{
+    color: #6a7282;
+    font-size: 12px;
+    font-weight: 500;
+}
+header .left .further-info p{
+    color: black;
+    margin-bottom: 0;
+}
+header .left .reviews{
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    background-color: white;
+    padding: 10px;
+}
+header .left .reviews p{
+    margin-bottom: 0;
+}
+
+
+header .left img{
+    object-fit: cover;
+}
+header .right{
+    padding: 25px;
+}
+header .right .icons div{
+    background-color:#ffedd4;
+}
+header .right .icons div {
+    color: var(--main-color);
+    transition: var(--main-transition);
+}
+header .right .icons div:hover{
+    background-color:  #fbcd8c;
+    transition: var(--main-transition);
+}
+
+header .right ul li button{
+    border: none;
+    color: inherit;
+    transform: none;
+}
+header .right .nav{
+    border: none;
+}
+header .right .nav .nav-item button{
+    background: none;
+    border: none;
+    /* padding: 0; */
+    color: inherit;
+    box-shadow: none;
+    color: #6A7282;
+}
+header .right .nav .nav-item button:hover{
+    color: black;
+}
+header .right .nav .nav-item :focus{
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+}
+
+header .right .tab-content{
+    padding-bottom: 50px;
+    border-bottom: 1px solid #b4b4b4;
+}
+
+header .right .content{
+    max-height: 400px;
+    padding: 24px 12px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+header .right .ingredient{
+    background-color: var(--bg-color);
+}
+header .right .content ul{
+    padding: 0;
+}
+
+header .right .content ul li div{
+    width: 20px;
+    height: 20px;
+    color: white;
+    background-color: var(--main-color);
+    border-radius: 50%;
+}
+header .right .ingredient ul li div{
+    width: 20px;
+    height: 20px;
+}
+
+header .right .instruction ul li div{
+    min-width: 40px;
+    min-height: 40px;
+}
+header .right .nutrition .title{
+    font-weight: 500;
+    font-size: 16px;
+}
+header .right .nutrition .amount{
+    font-weight: 700;
+    font-size: 20px;
+}
+header .right .nutrition .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #364153;
+    border-radius: 10px;
+}
+header .right .nutrition .icon i{
+    font-size: 20px;
+}
+header .right .hints .item{
+    padding: 16px;
+    background-color: #e1700021;
+    border-left: 4px solid #E17100;
+    border-radius: 10px;
+}
+header .right .hints .item i{
+    color: #E17100;
+    font-size: 20px;
+}
+header .right .refresh-button{
+    padding: 20px 16px;
+}
+header .right .refresh-button .button{
+    padding: 12px 24px;
+    background: var(--gradient-color);
+    transition: all var(--main-transition);
+    width: fit-content;
+    border-radius: 10px;
+    cursor: pointer;
+}
+header .right .refresh-button .button:hover{
+    background: #cd3e01;
+    transform: scale(1.05);
+    transition: var(--main-transition);
+}
+
+/* ------------------------------------------------------------------------- */

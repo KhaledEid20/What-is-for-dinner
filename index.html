@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="icon" href="./Images/favicon.png">
+        <link rel="stylesheet" href="./CSS/reset.css">
+        <link rel="stylesheet" href="./CSS/all.min.css">
+        <link rel="stylesheet" href="./CSS/reset.css">
+        <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+        <link rel="stylesheet" href="./CSS/main.css">
+        <link rel="stylesheet" href="./CSS/media.css">
+    </head>
+    <body>
+        <!-- ----------------------------------------navbar--------------------------- -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <div class="d-flex gap-3 align-items-center">
+                    <div class="icon p-3 rounded-circle">
+                        <i class="fa-solid fa-utensils text-white"></i>
+                    </div>
+                    <div class="my-auto">
+                        <a class="navbar-brand fw-bolder p-0"
+                            href="#">What's
+                            For
+                            Dinner
+                        </a>
+                        <p class="mb-0">Your daily meal inspiration</p>
+                    </div>
+                </div>
+                <button
+                    class="navbar-toggler gap-1 px-2"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse"
+                    id="navbarSupportedContent">
+                    <ul
+                        class="navbar-nav mt-3 mt-lg-0 me-0 ms-lg-auto mb-2 mb-lg-0 gap-4 align-items-lg-center">
+                        <li
+                            class="d-flex align-items-center">
+                            <a href>
+                                <i class="fa-solid fa-bookmark me-2"></i>
+                                <span>Saved Recipes</span>
+                            </a>
+                        </li>
+                        <li
+                            class="d-flex align-items-center">
+                            <a href>
+                                <i
+                                    class="fa-solid fa-clock-rotate-left me-2"></i>
+                                <span>Recent</span>
+                            </a>
+                        </li>
+                        <li
+                            class="d-flex align-items-center">
+                            <a href>
+
+                                <i class="fa-solid fa-gear me-2"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        <li class="image-holder">
+                            <img class
+                                src="./Images/imgi_1_avatar-4.jpeg"
+                                alt>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="vh-100 d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="card rounded-4 overflow-y-auto overflow-x-hidden">
+                    <div class="row">
+                        <div class="left col-12 col-lg-5">
+                            <img
+                                class="w-100 h-100"
+                                src="./Images/imgi_2_photo-1585032226651-759b368d7246.jpeg"
+                                alt>
+                            <div class="further-info">
+                                <div class="row">
+                                    <div
+                                        class="col-4 d-flex flex-column text-center">
+                                        <i
+                                            class="fa-regular fa-clock mx-auto prep"
+                                            style="color: #F54900;"></i>
+                                        <span>Prep Time</span>
+                                        <p class="fw-bold">15 min</p>
+                                    </div>
+                                    <div
+                                        class="col-4 d-flex flex-column text-center cook">
+                                        <i
+                                            class="fa-solid fa-fire-burner mx-auto"
+                                            style="color: #FB2C36;"></i>
+                                        <span>Cook Time</span>
+                                        <p class="fw-bold">0 min</p>
+                                    </div>
+                                    <div
+                                        class="col-4 d-flex flex-column text-center serving">
+                                        <i
+                                            class="fa-solid fa-users mx-auto"
+                                            style="color : #2B7FFF"></i>
+                                        <span>Servings</span>
+                                        <p class="fw-bold">2 people</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="reviews d-flex align-items-center gap-1 rounded-pill">
+                                <i class="fa-solid fa-star"
+                                    style="color: rgb(255, 212, 59);"></i>
+                                <span class="rate">4.7</span>
+                                <p class="population">(412 reviews)</p>
+                            </div>
+                        </div>
+                        <div class="right col-12 col-lg-7">
+                            <div class="icons d-flex gap-2 justify-content-end">
+                                <a href>
+                                    <div class="p-3 rounded-2">
+                                        <i class="fa-solid fa-bookmark"></i>
+                                    </div>
+                                </a>
+                                <a href>
+                                    <div class="p-3 rounded-2">
+                                        <i class="fa-solid fa-share-nodes"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="head d-flex flex-column gap-2">
+                                <div class="tags d-flex gap-2">
+                                    <span
+                                        class="p-2 rounded-pill bg-danger text-white">Intermediate</span>
+                                    <span
+                                        class="p-2 rounded-pill bg-danger text-white">Asian</span>
+                                </div>
+                                <div class>
+                                    <h2 class="fw-bolder">Pad Thai</h2>
+                                    <p>Popular Thai stir-fried noodles with
+                                        shrimp
+                                        and peanuts</p>
+                                </div>
+                            </div>
+                            <ul
+                                class="nav nav-tabs justify-content-center justify-content-lg-around fw-bolder"
+                                id="myTab"
+                                role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button
+                                        class="nav-link d-flex over align-items-center gap-1 px-2  active"
+                                        id="ingredient-tab" data-bs-toggle="tab"
+                                        data-bs-target="#ingredient-tab-pane"
+                                        type="button" role="tab"
+                                        aria-controls="ingredient-tab-pane"
+                                        aria-selected="true">
+                                        <i class="fa-solid fa-list-check"></i>
+                                        <span>Ingredients</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button
+                                        class="nav-link d-flex over align-items-center gap-1 px-2"
+                                        id="instruction-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#instruction-tab-pane"
+                                        type="button" role="tab"
+                                        aria-controls="instruction-tab-pane"
+                                        aria-selected="false">
+                                        <i class="fa-solid fa-book-open"></i>
+                                        <span>Instructions</span></button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button
+                                        class="nav-link d-flex over align-items-center gap-1 px-2"
+                                        id="nutration-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#nutration-tab-pane"
+                                        type="button" role="tab"
+                                        aria-controls="nutration-tab-pane"
+                                        aria-selected="false">
+                                        <i class="fa-solid fa-chart-pie"></i>
+                                        <span>Nutrition</span>
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button
+                                        class="nav-link d-flex over align-items-center gap-1 px-2"
+                                        id="chef-tab"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#chef-tab-pane"
+                                        type="button" role="tab"
+                                        aria-controls="chef-tab-pane"
+                                        aria-selected="false">
+                                        <i class="fa-regular fa-lightbulb"></i>
+                                        <span>Chef's Tips</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active"
+                                    id="ingredient-tab-pane" role="tabpanel"
+                                    aria-labelledby="ingredient-tab"
+                                    tabindex="0">
+                                    <div
+                                        class="content ingredient overflow-y-auto">
+                                        <ul
+                                            class="d-flex flex-column gap-2">
+                                            <li
+                                                class="d-flex align-items-center gap-2">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>200g rice noodles</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-2">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>200g rice noodles</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-2">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>200g rice noodles</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-2">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>200g rice noodles</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-2">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>200g rice noodles</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-2">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>200g rice noodles</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-2">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>200g rice noodles</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-2">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>200g rice noodles</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-2">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>200g rice noodles</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade"
+                                    id="instruction-tab-pane"
+                                    role="tabpanel"
+                                    aria-labelledby="instruction-tab"
+                                    tabindex="0">
+                                    <div
+                                        class="content instruction overflow-y-auto">
+                                        <ul
+                                            class="d-flex flex-column gap-4 ps-0 ">
+                                            <li
+                                                class="d-flex align-items-center gap-4">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center rounded-3">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>Soak rice noodles in warm
+                                                    water for 30 minutes. Drain
+                                                    and set aside.</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-4">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center rounded-3">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>Soak rice noodles in warm
+                                                    water for 30 minutes. Drain
+                                                    and set aside.</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-4">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center rounded-3">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>Soak rice noodles in warm
+                                                    water for 30 minutes. Drain
+                                                    and set aside.</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-4">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center rounded-3">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>Soak rice noodles in warm
+                                                    water for 30 minutes. Drain
+                                                    and set aside.</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-4">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center rounded-3">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>Soak rice noodles in warm
+                                                    water for 30 minutes. Drain
+                                                    and set aside.</span>
+                                            </li>
+                                            <li
+                                                class="d-flex align-items-center gap-4">
+                                                <div
+                                                    class="d-flex justify-content-center align-items-center rounded-3">
+                                                    <span>1</span>
+                                                </div>
+                                                <span>Soak rice noodles in warm
+                                                    water for 30 minutes. Drain
+                                                    and set aside.</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade"
+                                    id="nutration-tab-pane"
+                                    role="tabpanel"
+                                    aria-labelledby="nutration-tab"
+                                    tabindex="0">
+                                    <div class="content nutrition row g-3">
+                                        <div class="col-12 col-lg-6 calories">
+                                            <div
+                                                class="d-flex align-items-center justify-content-between">
+                                                <div
+                                                    class="d-flex align-items-center gap-2">
+                                                    <div
+                                                        class="icon"
+                                                        style="background-color: #f54a004d;">
+                                                        <i
+                                                            class="fa-solid fa-fire"
+                                                            style="color: #F54900;"></i>
+                                                    </div>
+                                                    <span
+                                                        class="title">Calories</span>
+                                                </div>
+                                                <span class="amount">540
+                                                    kcal</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 protein">
+                                            <div
+                                                class="d-flex align-items-center justify-content-between">
+                                                <div
+                                                    class="d-flex align-items-center gap-2">
+                                                    <div
+                                                        class="icon"
+                                                        style="background-color: #155efc4c;">
+                                                        <i
+                                                            class="fa-solid fa-dumbbell"
+                                                            style="color: #155DFC;"></i>
+                                                    </div>
+                                                    <span
+                                                        class="title">Protein</span>
+                                                </div>
+                                                <span class="amount">540
+                                                    kcal</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 carb">
+                                            <div
+                                                class="d-flex align-items-center justify-content-between">
+                                                <div
+                                                    class="d-flex align-items-center gap-2">
+                                                    <div
+                                                        class="icon"
+                                                        style="background-color: #D087004c;">
+                                                        <i
+                                                            class="fa-solid fa-wheat-awn"
+                                                            style="color: #D08700;"></i>
+                                                    </div>
+                                                    <span
+                                                        class="title">Carbohydrates</span>
+                                                </div>
+                                                <span class="amount">540
+                                                    kcal</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 fat">
+                                            <div
+                                                class="d-flex align-items-center justify-content-between">
+                                                <div
+                                                    class="d-flex align-items-center gap-2">
+                                                    <div
+                                                        class="icon"
+                                                        style="background-color: #E7000B4c;">
+                                                        <i
+                                                            class="fa-solid fa-droplet"
+                                                            style="color: #E7000B;"></i>
+                                                    </div>
+                                                    <span
+                                                        class="title">Fat</span>
+                                                </div>
+                                                <span class="amount">540
+                                                    kcal</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 fiber">
+                                            <div
+                                                class="d-flex align-items-center justify-content-between">
+                                                <div
+                                                    class="d-flex align-items-center gap-2">
+                                                    <div
+                                                        class="icon"
+                                                        style="background-color: #00A63E4c;">
+                                                        <i
+                                                            class="fa-solid fa-seedling"
+                                                            style="color: #00A63E;"></i>
+                                                    </div>
+                                                    <span
+                                                        class="title">Fiber</span>
+                                                </div>
+                                                <span class="amount">540
+                                                    kcal</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-lg-6 sodium">
+                                            <div
+                                                class="d-flex align-items-center justify-content-between">
+                                                <div
+                                                    class="d-flex align-items-center gap-2">
+                                                    <div
+                                                        class="icon"
+                                                        style="background-color: #E600764c;">
+                                                        <i
+                                                            class="fa-solid fa-cube"
+                                                            style="color: #E60076;"></i>
+                                                    </div>
+                                                    <span
+                                                        class="title">Sodium</span>
+                                                </div>
+                                                <span class="amount">540
+                                                    kcal</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="chef-tab-pane"
+                                    role="tabpanel"
+                                    aria-labelledby="chef-tab"
+                                    tabindex="0">
+                                    <div
+                                        class="content hints d-flex flex-column gap-4">
+                                        <div
+                                            class="item d-flex align-items-center gap-3">
+                                            <i
+                                                class="fa-solid fa-circle-check"></i>
+                                            <span>Don't oversoak noodles or
+                                                they'll be mushy</span>
+                                        </div>
+                                        <div
+                                            class="item d-flex align-items-center gap-3">
+                                            <i
+                                                class="fa-solid fa-circle-check"></i>
+                                            <span>Don't oversoak noodles or
+                                                they'll be mushy</span>
+                                        </div>
+                                        <div
+                                            class="item d-flex align-items-center gap-3">
+                                            <i
+                                                class="fa-solid fa-circle-check"></i>
+                                            <span>Don't oversoak noodles or
+                                                they'll be mushy</span>
+                                        </div>
+                                        <div
+                                            class="item d-flex align-items-center gap-3">
+                                            <i
+                                                class="fa-solid fa-circle-check"></i>
+                                            <span>Don't oversoak noodles or
+                                                they'll be mushy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="refresh-button">
+                                <span
+                                    class="d-flex align-items-center text-white button gap-2">
+                                    <i class="fa-solid fa-arrows-rotate"></i>
+                                    <span>Try Another Recipe</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- --------------------------------------------end of navbar ------------------------- -->
+        <!-- -----------------------------------Scripts----------------------------------------- -->
+        <script src="./JS/bootstrap.bundle.min.js"></script>
+        <script src="./JS/main.js"></script>
+        <!-- ------------------------------------------------end of scripts------------- -------- -->
+    </body>
+</html>
