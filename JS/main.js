@@ -1,7 +1,11 @@
 import { data } from "./site-data.js";
 
-let prev = null;
 
+window.addEventListener("load", () => {
+	update(randomRecipes());
+});
+
+let prev = null;
 function randomRecipes() {
     let randomIndex;
 
