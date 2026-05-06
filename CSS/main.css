@@ -55,10 +55,11 @@ nav ul li a:hover{
 /* ---------------------------------header section---------------------------------------- */
 header{
     background-color: #fefce8;
+    padding-block: 40px;
 }
 
 header .card{
-    margin-top: 100px;
+    margin-top: 350px;
     max-width: 1230px;
     max-height: 800px;
 }
@@ -98,8 +99,20 @@ header .left .reviews{
 }
 header .left .reviews p{
     margin-bottom: 0;
+    color: #6A7282;
+    font-size: 14px;
 }
 
+header .tags .red{
+    background-color: #dc354642;
+    color: #dc3546;
+    font-weight: 700;
+}
+header .tags .green{
+    background-color: #00A63E42;
+    color: #00A63E;
+    font-weight: 700;
+}
 
 header .left img{
     object-fit: cover;
@@ -149,7 +162,7 @@ header .right .tab-content{
 }
 
 header .right .content{
-    max-height: 400px;
+    height: 300px;
     padding: 24px 12px;
     border-radius: 20px;
     width: 100%;
@@ -218,6 +231,7 @@ header .right .refresh-button .button{
     width: fit-content;
     border-radius: 10px;
     cursor: pointer;
+    border: 0;
 }
 header .right .refresh-button .button:hover{
     background: #cd3e01;

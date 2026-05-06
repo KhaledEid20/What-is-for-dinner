@@ -1,154 +1,133 @@
-jQuery(document).ready(function($){
-	//set animation timing
-	var animationDelay = 2500,
-		//loading bar effect
-		barAnimationDelay = 3800,
-		barWaiting = barAnimationDelay - 3000, //3000 is the duration of the transition on the loading bar - set in the scss/css file
-		//letters effect
-		lettersDelay = 50,
-		//type effect
-		typeLettersDelay = 150,
-		selectionDuration = 500,
-		typeAnimationDelay = selectionDuration + 800,
-		//clip effect 
-		revealDuration = 600,
-		revealAnimationDelay = 1500;
-	
-	initHeadline();
-	
+import { data } from "./site-data.js";
 
-	function initHeadline() {
-		//insert <i> element for each letter of a changing word
-		singleLetters($('.cd-headline.letters').find('b'));
-		//initialise headline animation
-		animateHeadline($('.cd-headline'));
-	}
+let prev = null;
 
-	function singleLetters($words) {
-		$words.each(function(){
-			var word = $(this),
-				letters = word.text().split(''),
-				selected = word.hasClass('is-visible');
-			for (i in letters) {
-				if(word.parents('.rotate-2').length > 0) letters[i] = '<em>' + letters[i] + '</em>';
-				letters[i] = (selected) ? '<i class="in">' + letters[i] + '</i>': '<i>' + letters[i] + '</i>';
-			}
-		    var newLetters = letters.join('');
-		    word.html(newLetters).css('opacity', 1);
-		});
-	}
+function randomRecipes() {
+    let randomIndex;
 
-	function animateHeadline($headlines) {
-		var duration = animationDelay;
-		$headlines.each(function(){
-			var headline = $(this);
-			
-			if(headline.hasClass('loading-bar')) {
-				duration = barAnimationDelay;
-				setTimeout(function(){ headline.find('.cd-words-wrapper').addClass('is-loading') }, barWaiting);
-			} else if (headline.hasClass('clip')){
-				var spanWrapper = headline.find('.cd-words-wrapper'),
-					newWidth = spanWrapper.width() + 10
-				spanWrapper.css('width', newWidth);
-			} else if (!headline.hasClass('type') ) {
-				//assign to .cd-words-wrapper the width of its longest word
-				var words = headline.find('.cd-words-wrapper b'),
-					width = 0;
-				words.each(function(){
-					var wordWidth = $(this).width();
-				    if (wordWidth > width) width = wordWidth;
-				});
-				headline.find('.cd-words-wrapper').css('width', width);
-			};
+    do {
+        randomIndex = Math.floor(Math.random() * data.length);
+    } while (randomIndex === prev);
 
-			//trigger animation
-			setTimeout(function(){ hideWord( headline.find('.is-visible').eq(0) ) }, duration);
-		});
-	}
+    prev = randomIndex;
+    return data[randomIndex];
+}
 
-	function hideWord($word) {
-		var nextWord = takeNext($word);
-		
-		if($word.parents('.cd-headline').hasClass('type')) {
-			var parentSpan = $word.parent('.cd-words-wrapper');
-			parentSpan.addClass('selected').removeClass('waiting');	
-			setTimeout(function(){ 
-				parentSpan.removeClass('selected'); 
-				$word.removeClass('is-visible').addClass('is-hidden').children('i').removeClass('in').addClass('out');
-			}, selectionDuration);
-			setTimeout(function(){ showWord(nextWord, typeLettersDelay) }, typeAnimationDelay);
-		
-		} else if($word.parents('.cd-headline').hasClass('letters')) {
-			var bool = ($word.children('i').length >= nextWord.children('i').length) ? true : false;
-			hideLetter($word.find('i').eq(0), $word, bool, lettersDelay);
-			showLetter(nextWord.find('i').eq(0), nextWord, bool, lettersDelay);
-
-		}  else if($word.parents('.cd-headline').hasClass('clip')) {
-			$word.parents('.cd-words-wrapper').animate({ width : '2px' }, revealDuration, function(){
-				switchWord($word, nextWord);
-				showWord(nextWord);
-			});
-
-		} else if ($word.parents('.cd-headline').hasClass('loading-bar')){
-			$word.parents('.cd-words-wrapper').removeClass('is-loading');
-			switchWord($word, nextWord);
-			setTimeout(function(){ hideWord(nextWord) }, barAnimationDelay);
-			setTimeout(function(){ $word.parents('.cd-words-wrapper').addClass('is-loading') }, barWaiting);
-
-		} else {
-			switchWord($word, nextWord);
-			setTimeout(function(){ hideWord(nextWord) }, animationDelay);
-		}
-	}
-
-	function showWord($word, $duration) {
-		if($word.parents('.cd-headline').hasClass('type')) {
-			showLetter($word.find('i').eq(0), $word, false, $duration);
-			$word.addClass('is-visible').removeClass('is-hidden');
-
-		}  else if($word.parents('.cd-headline').hasClass('clip')) {
-			$word.parents('.cd-words-wrapper').animate({ 'width' : $word.width() + 10 }, revealDuration, function(){ 
-				setTimeout(function(){ hideWord($word) }, revealAnimationDelay); 
-			});
-		}
-	}
-
-	function hideLetter($letter, $word, $bool, $duration) {
-		$letter.removeClass('in').addClass('out');
-		
-		if(!$letter.is(':last-child')) {
-		 	setTimeout(function(){ hideLetter($letter.next(), $word, $bool, $duration); }, $duration);  
-		} else if($bool) { 
-		 	setTimeout(function(){ hideWord(takeNext($word)) }, animationDelay);
-		}
-
-		if($letter.is(':last-child') && $('html').hasClass('no-csstransitions')) {
-			var nextWord = takeNext($word);
-			switchWord($word, nextWord);
-		} 
-	}
-
-	function showLetter($letter, $word, $bool, $duration) {
-		$letter.addClass('in').removeClass('out');
-		
-		if(!$letter.is(':last-child')) { 
-			setTimeout(function(){ showLetter($letter.next(), $word, $bool, $duration); }, $duration); 
-		} else { 
-			if($word.parents('.cd-headline').hasClass('type')) { setTimeout(function(){ $word.parents('.cd-words-wrapper').addClass('waiting'); }, 200);}
-			if(!$bool) { setTimeout(function(){ hideWord($word) }, animationDelay) }
-		}
-	}
-
-	function takeNext($word) {
-		return (!$word.is(':last-child')) ? $word.next() : $word.parent().children().eq(0);
-	}
-
-	function takePrev($word) {
-		return (!$word.is(':first-child')) ? $word.prev() : $word.parent().children().last();
-	}
-
-	function switchWord($oldWord, $newWord) {
-		$oldWord.removeClass('is-visible').addClass('is-hidden');
-		$newWord.removeClass('is-hidden').addClass('is-visible');
-	}
+document.querySelector(".button").addEventListener("click", () => {
+	update(randomRecipes());
+    console.log(recipe.food_image);
 });
+
+function update(recipe){
+	document.querySelector(".left img").src = recipe.food_image
+	updateGeneralInfo(recipe);
+	updateTags(recipe);
+	updateTitle(recipe);
+	updateReviews(recipe);
+	updateIngredients(recipe);
+	updateInstructions(recipe);
+	updateNutration(recipe);
+	updateHints(recipe);
+
+}
+
+function updateReviews(recipe){
+	document.querySelector(".left .reviews span").textContent = recipe.extra_info.rate;
+	document.querySelector(".left .reviews p").textContent = recipe.extra_info.people;
+}
+
+function updateGeneralInfo(recipe){
+	document.querySelector(".further-info .prep").textContent =
+    recipe.extra_info.prep_time;
+
+	document.querySelector(".further-info .cook-time").textContent =
+    recipe.extra_info.cook_time;
+
+	document.querySelector(".further-info .serving").textContent =
+    recipe.extra_info.servings;
+}
+
+function updateTags(recipe){
+	var query = document.querySelector(".right .head .tags");
+	query.innerHTML=""
+	for(var i = 1 ; i<=recipe.tags.length ; i++){
+		const span = document.createElement("span");
+		span.className = "p-2 rounded-pill text-white";
+		if(i%2 == 0){
+			span.className += "p-2 rounded-pill red";
+		}
+		else{
+			span.className += "p-2 rounded-pill green";
+		}
+		span.textContent = recipe.tags[i-1]
+		query.appendChild(span);
+	}
+}
+function updateTitle(recipe){
+	document.querySelector(".right .head .title h2").textContent = recipe.recipe_name;
+	document.querySelector(".right .head .title p").textContent = recipe.recipe_desc;
+}
+
+function updateIngredients(recipe) {
+    const query = document.querySelector(".right .ingredient ul");
+
+    query.innerHTML = "";
+
+    recipe.ingredients.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.className = "d-flex align-items-center gap-2";
+
+        li.innerHTML = `
+            <div class="d-flex justify-content-center align-items-center">
+                <span>${index + 1}</span>
+            </div>
+            <span>${item}</span>
+        `;
+
+        query.appendChild(li);
+    });
+}
+function updateInstructions(recipe){
+	const query = document.querySelector(".right .instruction ul");
+
+    query.innerHTML = "";
+
+    recipe.ingredients.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.className = "d-flex align-items-center gap-2";
+
+        li.innerHTML = `
+			<div
+				class="d-flex justify-content-center align-items-center rounded-3">
+				<span>${index}</span>
+			</div>
+			<span>${item}</span>
+        `;
+
+        query.appendChild(li);
+    });
+}
+
+function updateNutration (recipe){
+	document.querySelector(".right .nutrition .calories .amount").textContent = recipe.nutrition.calories
+	document.querySelector(".right .nutrition .protein .amount").textContent = recipe.nutrition.protein
+	document.querySelector(".right .nutrition .carb .amount").textContent = recipe.nutrition.carbohydrates
+	document.querySelector(".right .nutrition .fiber .amount").textContent = recipe.nutrition.fiber
+	document.querySelector(".right .nutrition .fat .amount").textContent = recipe.nutrition.fat
+	document.querySelector(".right .nutrition .sodium .amount").textContent = recipe.nutrition.sodium
+}
+
+function updateHints (recipe){
+	var query = document.querySelector(".right .hints");
+	query.innerHTML="";
+	recipe.hints.forEach((item , index)=>{
+		const div = document.createElement("div");
+		div.className = "item d-flex align-items-center gap-3";
+		div.innerHTML=`
+		<i
+			class="fa-solid fa-circle-check"></i>
+		<span>${item}</span>
+		`;
+		query.appendChild(div)
+	})
+}
